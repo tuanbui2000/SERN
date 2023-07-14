@@ -75,7 +75,7 @@
                                 opacity: 1;
 
                                 span {
-                                    color: #f7d800;
+                                    color: #f76b00;
                                 }
                             }
 
@@ -173,6 +173,7 @@
                 .content-down {
                     height: 35%;
                     display: flex;
+                    padding-bottom: 10px;
                     justify-content: center;
                     align-items: flex-end;
                     background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
