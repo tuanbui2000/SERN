@@ -53,11 +53,12 @@
                         justify-content: flex-end;
                         align-items: center;
 
-                        i{
+                        i {
                             font-size: 15px;
                             margin-right: 5px;
                         }
-                        .support{
+
+                        .support {
                             padding-right: 30px;
                             display: flex;
                             align-items: center;
@@ -65,18 +66,41 @@
 
 
                         }
-                        .language-vi{
+
+                        .language-vi {
                             cursor: pointer;
-                            &.active{
-                                color: #f7d800;
+                            opacity: 0.2;
+
+                            &.active {
+                                opacity: 1;
+
+                                span {
+                                    color: #f7d800;
+                                }
+                            }
+
+                            &:hover {
+                                opacity: 0.8;
                             }
 
                         }
-                        .language-en{
-                            margin: 0 10px ;
+
+                        .language-en {
+                            margin: 0 10px;
                             cursor: pointer;
-                            &.active{
-                                color:#2e39d9;
+                            opacity: 0.2;
+
+                            &.active {
+                                opacity: 1;
+
+                                span {
+
+                                    color: #2e39d9;
+                                }
+                            }
+
+                            &:hover {
+                                opacity: 0.8;
                             }
                         }
                     }

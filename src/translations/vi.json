@@ -11,14 +11,15 @@
         "support":"Hỗ trợ"
     },
     "banner":{
-        "title1":"NỀN TÀNG Y TẾ",
+        "title1":"NỀN TẢNG Y TẾ",
         "title2":"CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
         "child1":"Khám chuyên khoa",
         "child2":"Khám từ xa",
         "child3":"KHám tổng quát",
         "child4":"Xét nghiệm y học",
         "child5":"Sức khỏe tinh  thần",
-        "child6":"Khám nha khoa"
+        "child6":"Khám nha khoa",
+        "search-placeholder":"Tìm chuyên khoa khám bệnh"
     },
     "common": {
         "add": "Thêm",
