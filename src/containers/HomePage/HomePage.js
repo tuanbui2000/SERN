@@ -5,6 +5,8 @@ import Specialty from './Section/Specialty';
 import MedicaFacility from './Section/MedicaFacility';
 import OutStandingDoctor from './Section/OutStandingDoctor';
 import HandBook from './Section/HandBook';
+import About from './Section/About';
+import HomeFooter from './HomeFooter';
 import './HomePage.scss'
 
 import "slick-carousel/slick/slick.css";
@@ -18,18 +20,21 @@ class HomePage extends Component {
             infinite: true,
             speed: 500,
             slidesToShow: 4,
-            slidesToScroll: 3,
-            
+            slidesToScroll: 2,
+            autoplay: true,
+            autoplaySpeed: 3000
+
 
         }
         return (
             <div>
                 <HomeHeader />
-                < Specialty settings={settings}/>
-                < MedicaFacility settings={settings}/>
-                < OutStandingDoctor settings={settings}/>
-                < HandBook settings={settings}/>
-
+                < Specialty settings={settings} />
+                < MedicaFacility settings={settings} />
+                < OutStandingDoctor settings={settings} />
+                < HandBook settings={settings} />
+                <About />
+                <HomeFooter/>
             </div>
         );
     }
