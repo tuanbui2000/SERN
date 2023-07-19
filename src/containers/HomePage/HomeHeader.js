@@ -18,7 +18,6 @@ class HomeHeader extends Component {
     render() {
         console.log('check props: ', this.props);
         let language = this.props.language;
-        console.log('check language: ',language);
         console.log('check language vi-en: ',LANGUAGES.VI,LANGUAGES.EN);
         return (
             <>
