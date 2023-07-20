@@ -1,5 +1,5 @@
 import actionTypes from './actionTypes';
-import { getAllcdeService } from "../../services/userService"
+import { getAllcdeService, createNewUserService } from "../../services/userService"
 
 
 // export const fetchGenderStart = () => ({
@@ -97,4 +97,34 @@ export const fetchRoleSuccess = (roleData) => ({
 })
 export const fetchRoleFailed = () => ({
     type: actionTypes.FETCH_ROLE_FAILED
+})
+
+
+
+
+
+export const createNewUser = (data) => {
+   
+    return async (dispatch, getState) => {
+        try {
+            let res = await createNewUserService(data);
+            if (res && res.errCode === 0) {
+                dispatch(saveUserSuccess(res.data));
+
+            } else {
+                dispatch(saveUserFailed());
+
+            }
+        } catch (error) {
+            dispatch(saveUserFailed());
+            console.log('createUserFailed, ', error);
+        }
+    }
+}
+
+export const saveUserSuccess = () => ({
+    type: actionTypes.CREATE_USER_SUCCESS,
+})
+export const saveUserFailed = () => ({
+    type: actionTypes.CREATE_USER_FAILED
 })
