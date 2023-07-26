@@ -16,9 +16,9 @@ class HomeHeader extends Component {
 
     }
     render() {
-        console.log('check props: ', this.props);
+        // console.log('check props: ', this.props);
         let language = this.props.language;
-        console.log('check language vi-en: ',LANGUAGES.VI,LANGUAGES.EN);
+        // console.log('check language vi-en: ',LANGUAGES.VI,LANGUAGES.EN);
         return (
             <>
                 <div className='home-header-container'>
@@ -67,7 +67,7 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 </div>
-
+{this.props.isShowBanner===true&&
                 <div className='home-header-banner'>
                     <div className='content-up'>
 
@@ -120,7 +120,7 @@ class HomeHeader extends Component {
                         </div>
 
                     </div>
-                </div>
+                </div>}
             </>
         );
     }

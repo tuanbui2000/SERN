@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './MedicaFacility.scss'
+// import './OutStandingDoctor.scss'
 import Slider from "react-slick";
 import * as actions from "../../../store/actions"
 import { LANGUAGES } from '../../../utils'
 import { FormattedMessage } from 'react-intl';
+import { withRouter } from 'react-router';
 
-class MedicaFacility extends Component {
-    constructor(props) {
+class OutStandingDoctor extends Component {
+    constructor (props) {
         super(props)
         this.state = {
             arrDoctors: []
@@ -25,9 +26,19 @@ class MedicaFacility extends Component {
 
     }
 
-
+ 
     componentDidMount() {
         this.props.loadTopDoctors();
+    }
+
+
+    handleViewDetailDoctor = (doctor) => {
+        console.log("check doctor detail: ", doctor);
+        if (this.props.history) {
+
+            this.props.history.push(`/detail-doctor/${doctor.id}`)
+        }
+
     }
 
     render() {
@@ -42,7 +53,7 @@ class MedicaFacility extends Component {
             <div className='section-share section-outstanding-doctor'>
                 <div className='section-container'>
                     <div className='section-header'>
-                        <span className='title-section'><FormattedMessage id="homepage.outstanding-doctor"/></span>
+                        <span className='title-section'><FormattedMessage id="homepage.outstanding-doctor" /></span>
                         <button className='btn-section'><FormattedMessage id="homepage.more-infor" /></button>
                     </div>
                     <div className='section-body'>
@@ -61,7 +72,8 @@ class MedicaFacility extends Component {
 
                                 return (
 
-                                    <div className='section-customize' key={index}>
+                                    <div className='section-customize' key={index}
+                                        onClick={() => this.handleViewDetailDoctor(item)}>
                                         <div className='customize-border'>
 
                                             <div className='outer-bg'>
@@ -109,4 +121,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MedicaFacility);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutStandingDoctor));
