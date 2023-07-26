@@ -32,14 +32,40 @@ const editUserService = (inputData) => {
 
 
 
-const getAllcdeService= (inputType)=>{
-    return axios.get(`/api/allcode?type=${inputType}` )
-    
+const getAllcdeService = (inputType) => {
+    return axios.get(`/api/allcode?type=${inputType}`)
+
 }
-const getTopDocorHomeService = (limit)=>{
+const getTopDocorHomeService = (limit) => {
     return axios.get(`/api/top-doctor-home?limit=${limit}`)
 }
+
+
+
+const getAllDoctors = () => {
+    return axios.get(`/api/get-all-doctors`)
+}
+
+
+
+
+const saveDetailDoctorService = (data) => {
+    return axios.post(`/api/save-info-doctors`, data)
+}
+
+
+
+
+
+
 export {
     handleLoginApi,
-    getAllUsers, createNewUserService, deleteUserService, editUserService,getAllcdeService,getTopDocorHomeService
+    getAllUsers,
+    createNewUserService,
+    deleteUserService,
+    editUserService,
+    getAllcdeService,
+    getTopDocorHomeService,
+    getAllDoctors,
+    saveDetailDoctorService
 }
