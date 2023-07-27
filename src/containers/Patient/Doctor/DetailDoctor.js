@@ -59,10 +59,10 @@ class DetailDoctor extends Component {
 
                             <div className='up'>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
                             <div className='down'>
-                                {detailDoctor && detailDoctor.Markdown && detailDoctor.Markdown.desciption &&
+                                {detailDoctor && detailDoctor.Markdown && detailDoctor.Markdown.description &&
 
                                     <span>
-                                        {detailDoctor.Markdown.desciption}
+                                        {detailDoctor.Markdown.description}
 
                                     </span>
 
