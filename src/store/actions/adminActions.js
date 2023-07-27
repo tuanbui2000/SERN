@@ -1,6 +1,6 @@
 import actionTypes from './actionTypes';
 import {
-    getAllcdeService,
+    getAllcodeService,
     createNewUserService,
     getAllUsers,
     deleteUserService,
@@ -22,7 +22,7 @@ export const fetchGenderStart = () => {
             dispatch({
                 type: actionTypes.FETCH_GENDER_START
             })
-            let res = await getAllcdeService("gender");
+            let res = await getAllcodeService("gender");
             if (res && res.errCode === 0) {
                 dispatch(fetchGenderSuccess(res.data));
 
@@ -53,7 +53,7 @@ export const fetchPositionStart = () => {
 
     return async (dispatch, getState) => {
         try {
-            let res = await getAllcdeService("position");
+            let res = await getAllcodeService("position");
             if (res && res.errCode === 0) {
                 dispatch(fetchPositionSuccess(res.data));
 
@@ -86,7 +86,7 @@ export const fetchRoleStart = () => {
 
     return async (dispatch, getState) => {
         try {
-            let res = await getAllcdeService("role");
+            let res = await getAllcodeService("role");
             if (res && res.errCode === 0) {
                 dispatch(fetchRoleSuccess(res.data));
 
@@ -314,7 +314,7 @@ export const saveDetailDoctor = (data) => {
     return async (dispatch, getState) => {
         try {
             let res = await saveDetailDoctorService(data);
-            
+
             if (res && res.errCode === 0) {
                 toast.success("save detail doctor succeed!")
                 dispatch({
@@ -343,5 +343,39 @@ export const saveDetailDoctor = (data) => {
         }
     }
 }
+
+
+
+export const fetchAllScheduleTime = () => {
+
+
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllcodeService("time");
+         
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
+                    dateTime: res.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED,
+
+
+                })
+            }
+        } catch (error) {
+            console.log('FETCH_ALLCODE_SCHEDULE_TIME_FAILED', error);
+            dispatch({
+                type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED,
+
+
+            })
+
+        }
+    }
+}
+
 // let res1 = await getTopDocorHomeService('2');
 // console.log(" check response get doctor: ", res1);

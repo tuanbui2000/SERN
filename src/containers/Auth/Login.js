@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import { handleLoginApi } from '../../services/userService'
 
 class Login extends Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.state = {
             username: '',
@@ -75,7 +75,11 @@ class Login extends Component {
         })
     }
 
-
+    handleKeyDown = (event) => {
+        if (event.key === "Enter" || event.keyCode === 13) {
+            this.handleLogin();
+        }
+    }
 
     render() {
 
@@ -98,7 +102,9 @@ class Login extends Component {
                                 <input type={
                                     this.state.isShowPassWord ? 'text' : 'password'
                                 }
-                                    className='form-control' placeholder='Enter your password' onChange={(event) => this.handleOnchangePassWord(event)}
+                                    className='form-control' placeholder='Enter your password'
+                                    onChange={(event) => this.handleOnchangePassWord(event)}
+                                    onKeyDown={(event) => this.handleKeyDown(event)}
                                 />
                                 <span
                                     onClick={() => { this.handleShowHiidePassWord() }}
@@ -108,12 +114,12 @@ class Login extends Component {
 
                         </div>
 
-                            <div className='col-12' style={{ color: 'red' }}>{this.state.errMessage}</div>
-                     
-                     <div className='col-12'>
-                        <button className='btn-login' onClick={() => {
-                            this.handleLogin()
-                        }}>Login</button>
+                        <div className='col-12' style={{ color: 'red' }}>{this.state.errMessage}</div>
+
+                        <div className='col-12'>
+                            <button className='btn-login' onClick={() => {
+                                this.handleLogin()
+                            }}>Login</button>
                         </div>
                         <div className='col-12'>
                             <span className='forgot-password'>forgot your password</span>

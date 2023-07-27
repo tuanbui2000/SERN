@@ -12,7 +12,7 @@ import TableManageUser from './TableManageUser';
 class UserRedux extends Component {
 
 
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.state = {
             genderArr: [],
@@ -44,21 +44,21 @@ class UserRedux extends Component {
         this.props.getRoleStart();
         // try {
         //     //
-        //     let res = await getAllcdeService('gender');
+        //     let res = await getAllcodeService('gender');
         //     if (res && res.errCode === 0) {
         //         this.setState({
         //             genderArr: res.data
         //         })
         //     }
         //     //
-        //     let positionRes = await getAllcdeService('position');
+        //     let positionRes = await getAllcodeService('position');
         //     if (positionRes && positionRes.errCode === 0) {
         //         this.setState({
         //             positionArr: positionRes.data
         //         })
         //     }
         //     //
-        //     let roleRes = await getAllcdeService('role');
+        //     let roleRes = await getAllcodeService('role');
         //     if (roleRes && roleRes.errCode === 0) {
         //         this.setState({
         //             roleArr: roleRes.data
@@ -216,7 +216,7 @@ class UserRedux extends Component {
         let imageBase64 = ''
         if (user.image) {
             imageBase64 = new Buffer(user.image, 'base64').toString('binary')
-          
+
         }
         this.setState({
 

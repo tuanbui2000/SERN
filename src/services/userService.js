@@ -32,7 +32,7 @@ const editUserService = (inputData) => {
 
 
 
-const getAllcdeService = (inputType) => {
+const getAllcodeService = (inputType) => {
     return axios.get(`/api/allcode?type=${inputType}`)
 
 }
@@ -69,7 +69,7 @@ export {
     createNewUserService,
     deleteUserService,
     editUserService,
-    getAllcdeService,
+    getAllcodeService,
     getTopDocorHomeService,
     getAllDoctors,
     saveDetailDoctorService,
