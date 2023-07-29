@@ -9,7 +9,8 @@ import DatePicker from '../../../components/Input/DatePicker';
 import moment from 'moment';
 import { toast } from 'react-toastify';
 import _ from 'lodash';
-import{saveBulkScheduleDoctor} from '../../../services/userService'
+import { saveBulkScheduleDoctor } from '../../../services/userService'
+
 
 
 class ManageSchedule extends Component {
@@ -116,7 +117,7 @@ class ManageSchedule extends Component {
     handleSaveSchedule = async () => {
         let { rangeTime, selectedDoctor, currentDate } = this.state;
         let result = []; // Added the equal sign to assign an empty array to "result"
-    
+
         if (!currentDate) {
             toast.error("Invalid selected date!");
             return;
@@ -125,7 +126,7 @@ class ManageSchedule extends Component {
             toast.error("invaled selected doctor!");
             return;
         }
-     
+
         let formatedDate = new Date(currentDate).getTime()
         if (rangeTime && rangeTime.length > 0) {
             let selectedTime = rangeTime.filter(item => item.isSelected === true)
@@ -141,7 +142,7 @@ class ManageSchedule extends Component {
                 toast.error("Invalid selected time!")
                 return
             }
-            
+
             console.log(result);
 
         }
@@ -152,15 +153,21 @@ class ManageSchedule extends Component {
         let res = await saveBulkScheduleDoctor({
             arrSchedule: result,
             doctorId: selectedDoctor.value,
-            date:formatedDate
+            date: formatedDate
         })
-        console.log("chck keeta uqas chek bulk", res);
+        if (res && res.errCode === 0) {
+            toast.success("save schedule succeed!! ")
+        } else {
+            toast.error("saveBulkScheduleDoctor error")
+            console.log("saveBulkScheduleDoctor error:>>> ", res);
 
+        }
     }
     render() {
 
         let { rangeTime } = this.state;
         let { language } = this.props;
+        let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
         return (
 
             <div className=" manage-schedule-container">
@@ -183,7 +190,7 @@ class ManageSchedule extends Component {
                                 className="form-control"
                                 onChange={this.handleOnChangeDatePicker}
                                 value={this.state.currentDate}
-                                minDate={new Date()}
+                                minDate={yesterday}
 
                             />
 
