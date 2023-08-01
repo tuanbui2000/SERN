@@ -36,7 +36,7 @@
             "handbook": "Cẩm nang",
             "manage-handbook": "Quản lý  cẩm nang"
         },
-        "doctor":{
+        "doctor": {
             "manage-schedule": "Quản lý kế hoạch khám bệnh"
         }
     },
@@ -55,22 +55,38 @@
         "edit": "lưu thay đổi",
         "image": "Ảnh đại diện"
     },
-    "homepage":{
-        "oustanding-doctor":"Bác sĩ nổi bật tuần qua",
-        "more-infor":"Xem thêm"
+    "homepage": {
+        "oustanding-doctor": "Bác sĩ nổi bật tuần qua",
+        "more-infor": "Xem thêm"
     },
-    "manage-schedule":{
-        "title":"Quản lý kế hoạch khám bệnh của bác sĩ",
+    "manage-schedule": {
+        "title": "Quản lý kế hoạch khám bệnh của bác sĩ",
         "choose-doctor": "Chọn bác sĩ",
         "choose-date": "Chọn ngày",
-        "save":"Lưu thông tin"
+        "save": "Lưu thông tin"
     },
-    "patient":{
-        "detail-doctor":{
-        "schedule":"Lịch khám",
-        "no-schedule":"Opps! Không có lịch hẹn trong thời gian này, vui lòng chọn khoảng thời gian khác !!",
-        "book": "Chọn ",
-        "free": " và đặt ( miễn phí ) "
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Lịch khám",
+            "no-schedule": "Opps! Không có lịch hẹn trong thời gian này, vui lòng chọn khoảng thời gian khác !!",
+            "book": "Chọn ",
+            "free": " và đặt ( miễn phí ) "
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Tạo thêm thông tin doctors",
+            "introduction-info": "Thông tin giới thiệu",
+            "choose-doctor": "Chọn bác sĩ",
+            "save-info": "Lưu thông tin",
+            "create-info": "Tạo thông tin",
+            "price":"Chọn giá", 
+            "Payment": "Phương thức thanh toán",
+            "province": "Tỉnh thành",
+            "nameClinic":" Tên phòng khám",
+            "addressClinic":" Địa chỉ phòng khám",
+            "note":"Ghi chú"
+
+        }
     }
-}
 }
