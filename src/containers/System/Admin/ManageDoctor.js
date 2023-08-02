@@ -169,22 +169,75 @@ class ManageDoctor extends Component {
 
     handleChangeSelect = async (selectedOption) => {
         this.setState({ selectedOption });
-
+        let { listPayment, listPrice, listProvince } = this.state;
         let res = await getDetailInfoDoctor(selectedOption.value)
         if (res && res.errCode === 0 && res.data && res.data.Markdown) {
             let markdown = res.data.Markdown;
+
+            let addressClinic = '',
+                nameClinic = '',
+                priceId = '',
+                paymentId = '',
+                provinceId = '',
+                note = '',
+                selectedPayment = '',
+                selectedPrice = '',
+                selectedProvince = '';
+
+
+
+
+
+            if (res.data.Doctor_infor) {
+                addressClinic = res.data.Doctor_infor.addressClinic;
+                nameClinic = res.data.Doctor_infor.nameClinic;
+                note = res.data.Doctor_infor.note;
+
+                priceId = res.data.Doctor_infor.priceId;
+                paymentId = res.data.Doctor_infor.paymentId;
+                provinceId = res.data.Doctor_infor.provinceId;
+
+
+                selectedPayment = listPayment.find(item => {
+                    return item && item.value === paymentId
+                })
+                selectedPrice = listPrice.find(item => {
+                    return item && item.value === priceId
+                })
+                selectedProvince = listProvince.find(item => {
+                    return item && item.value === provinceId
+                })
+
+
+
+                // console.log('tun check new onchange', res.data.Doctor_infor);
+                // console.log('tun check list', listProvince);
+                console.log('tun check selected', selectedProvince);
+
+            }
+
+
             this.setState({
                 contentHTML: markdown.contentHTML,
                 contentMarkdown: markdown.contentMarkdown,
                 description: markdown.description,
-                hasOldData: true
+                hasOldData: true,
+                addressClinic: addressClinic,
+                nameClinic: nameClinic,
+                note: note,
+                selectedProvince: selectedProvince,
+                selectedPrice: selectedPrice,
+                selectedPayment: selectedPayment,
             })
         } else {
             this.setState({
                 contentHTML: '',
                 contentMarkdown: '',
                 description: '',
-                hasOldData: false
+                hasOldData: false,
+                addressClinic: '',
+                nameClinic: '',
+                note: '',
 
             })
         }
@@ -213,13 +266,11 @@ class ManageDoctor extends Component {
             ...stateCopy
 
         })
-        console.log('tun check new onchange', name, selectedOption);
     }
 
     render() {
         let { hasOldData } = this.state
         // console.log("check state, ", this.state);
-        console.log("check action: value ", this.state.selectedPrice.value);
 
 
         return (

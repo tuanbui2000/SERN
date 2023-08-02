@@ -71,6 +71,13 @@
             "no-schedule": "Opps! There is no appointment available during this time, please choose another time slot!",
             "book": "Choose ",
             "free": " and book ( for Free )"
+        },
+        "extra-info-doctor":{
+            "text-address":"Medical examination address",
+            "price":"Medical examination fee: ",
+            "detail": "See detail",
+            "payment":"Patients can pay for expenses in the form of: ",
+            "hide-price": "Hidden price list"
         }
     },
     "admin":{
