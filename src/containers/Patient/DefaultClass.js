@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import './DefaultClass.scss'
 import { FormattedMessage } from 'react-intl';
 
 class DefaultClass extends Component {

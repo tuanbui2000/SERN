@@ -123,7 +123,6 @@ class DoctorSchedule extends Component {
             isOpenModalBooking: true,
             dataCheduleTimeModal:time
         })
-        console.log("chekc time",time);
         
     }
 

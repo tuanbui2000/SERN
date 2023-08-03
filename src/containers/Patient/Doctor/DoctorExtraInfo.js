@@ -38,7 +38,7 @@ class DoctorExtraInfo extends Component {
 
         if (prevProps.doctorIdfromparent !== this.props.doctorIdfromparent) {
             let res = await getExtraInfoDoctorById(this.props.doctorIdfromparent);
-            console.log("chjeckk", res.data);
+            // console.log("chjeckk", res.data);
             if (res && res.errCode === 0) {
                 this.setState({
                     extraInfor: res.data
