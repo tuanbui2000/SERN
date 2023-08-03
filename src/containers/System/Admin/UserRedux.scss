@@ -15,7 +15,8 @@
     width: 100%;
     border: 1px solid #ddd;
     cursor: pointer;
-    background: center center no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 }
