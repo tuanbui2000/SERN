@@ -78,6 +78,20 @@
             "detail": "See detail",
             "payment":"Patients can pay for expenses in the form of: ",
             "hide-price": "Hidden price list"
+        },
+        "booking-modal":{
+            "title": "Medical appointment scheduling information",
+            "fullName":"Full name",
+            "phoneNumber":" Phonenumber",
+            "email":"Email",
+            "address":"Address",
+            "reason": "Reason",
+            "birthday": "Date of birth",
+            "gender": "GGender",
+            "btn-confirm":"Confirm",
+            "btn-cancel":"Cancel",
+            "priceBooking":"Free booking",
+            "price":"Price: "
         }
     },
     "admin":{
