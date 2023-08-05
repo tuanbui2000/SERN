@@ -158,8 +158,8 @@ class ManageSchedule extends Component {
         if (res && res.errCode === 0) {
             toast.success("save schedule succeed!! ")
         } else {
-            toast.error("saveBulkScheduleDoctor error")
-            console.log("saveBulkScheduleDoctor error:>>> ", res);
+            toast.error("save Bulk Schedule Doctor error")
+            console.log("save Bulk Schedule Doctor error:>>> ", res);
 
         }
     }

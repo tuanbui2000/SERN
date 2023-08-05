@@ -87,7 +87,7 @@
             "address":"Address",
             "reason": "Reason",
             "birthday": "Date of birth",
-            "gender": "GGender",
+            "gender": "Gender",
             "btn-confirm":"Confirm",
             "btn-cancel":"Cancel",
             "priceBooking":"Free booking",
