@@ -102,7 +102,7 @@ class DoctorSchedule extends Component {
 
             let doctorId = this.props.doctorIdfromparent;
             let date = event.target.value;
-            console.log(doctorId, date);
+            // console.log(doctorId, date);
             let res = await getScheduleByDate(doctorId, date)
 
             if (res && res.errCode === 0) {
@@ -111,7 +111,7 @@ class DoctorSchedule extends Component {
                     allAvailbleTime: res.data ? res.data : []
                 })
             }
-            console.log(res);
+            // console.log(res);
 
 
         }
@@ -139,7 +139,7 @@ closeBookingModal= ()=>{
 
     render() {
 
-        console.log()
+        // console.log()
         let { allDays, allAvailbleTime,isOpenModalBooking ,dataCheduleTimeModal} = this.state
         let { language } = this.props
         return (

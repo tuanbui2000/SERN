@@ -247,7 +247,8 @@ class UserRedux extends Component {
         let isGetGender = this.props.isLoadingGender;
 
         let { email, password,
-            firstName, lastName, address, phoneNumber, gender, position, role, avatar
+            firstName, lastName, address, phoneNumber, gender, position, role,
+            // avatar
         } = this.state
 
         // console.log("check state component: ", this.state);

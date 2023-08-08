@@ -131,7 +131,7 @@ class BookingModal extends Component {
         } else {
             toast.error("Booking a new appointment failed!")
         }
-        console.log(this.state);
+        // console.log(this.state);
     }
 
 

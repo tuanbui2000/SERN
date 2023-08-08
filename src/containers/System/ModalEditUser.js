@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, } from 'reactstrap';
 import _ from "lodash"
@@ -33,7 +33,7 @@ class ModalEditUser extends Component {
                 address: user.address
             })
         }
-        console.log('mouting edit modal', this.props.currentUser);
+        // console.log('mouting edit modal', this.props.currentUser);
 
 
     }
@@ -86,8 +86,7 @@ class ModalEditUser extends Component {
 
 
     render() {
-        console.log("check child props", this.props);
-        // console.log("check child open modal", this.props.isOpen);
+  
         return (
             <Modal
                 isOpen={this.props.isOpen}
