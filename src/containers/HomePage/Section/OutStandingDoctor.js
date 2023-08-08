@@ -35,7 +35,6 @@ class OutStandingDoctor extends Component {
     handleViewDetailDoctor = (doctor) => {
         // console.log("check doctor detail: ", doctor);
         if (this.props.history) {
-
             this.props.history.push(`/detail-doctor/${doctor.id}`)
         }
 
@@ -73,7 +72,8 @@ class OutStandingDoctor extends Component {
                                 return (
 
                                     <div className='section-customize' key={index}
-                                        onClick={() => this.handleViewDetailDoctor(item)}>
+                                        onClick={() => this.handleViewDetailDoctor(item)}
+                                    >
                                         <div className='customize-border'>
 
                                             <div className='outer-bg'>
