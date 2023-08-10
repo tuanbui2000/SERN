@@ -16,15 +16,23 @@ class DoctorSchedule extends Component {
             allDays: [],
             allAvailbleTime: [],
             isOpenModalBooking: false,
-            dataCheduleTimeModal:{}
+            dataCheduleTimeModal: {}
 
         }
     }
     async componentDidMount() {
-
         let { language } = this.props
-
         let arrDate = this.getArrayDays(language);
+        if (this.props.doctorIdfromparent) {
+            let res = await getScheduleByDate(this.props.doctorIdfromparent, arrDate[0].value)
+            this.setState({
+                allAvailbleTime: res.data ? res.data : []
+
+            })
+        }
+
+
+    
         this.setState({
             allDays: arrDate,
         })
@@ -104,9 +112,7 @@ class DoctorSchedule extends Component {
             let date = event.target.value;
             // console.log(doctorId, date);
             let res = await getScheduleByDate(doctorId, date)
-
             if (res && res.errCode === 0) {
-
                 this.setState({
                     allAvailbleTime: res.data ? res.data : []
                 })
@@ -121,17 +127,17 @@ class DoctorSchedule extends Component {
     handleClickScheduleTime = (time) => {
         this.setState({
             isOpenModalBooking: true,
-            dataCheduleTimeModal:time
+            dataCheduleTimeModal: time
         })
-        
+
     }
 
 
-closeBookingModal= ()=>{
-    this.setState({
-        isOpenModalBooking:false
-    })
-}
+    closeBookingModal = () => {
+        this.setState({
+            isOpenModalBooking: false
+        })
+    }
 
 
 
@@ -140,7 +146,7 @@ closeBookingModal= ()=>{
     render() {
 
         // console.log()
-        let { allDays, allAvailbleTime,isOpenModalBooking ,dataCheduleTimeModal} = this.state
+        let { allDays, allAvailbleTime, isOpenModalBooking, dataCheduleTimeModal } = this.state
         let { language } = this.props
         return (
             <>
@@ -172,9 +178,9 @@ closeBookingModal= ()=>{
                                         let timeDisplay = language === LANGUAGES.VI ? item.timeTypeData.valueVi : item.timeTypeData.valueEn
                                         return (
                                             <button key={index}
-                                            onClick={()=>this.handleClickScheduleTime(item)}
-                                                className={ language === LANGUAGES.VI ? "btn-vi" : "btn-en" }
-                                                
+                                                onClick={() => this.handleClickScheduleTime(item)}
+                                                className={language === LANGUAGES.VI ? "btn-vi" : "btn-en"}
+
                                             >{timeDisplay}</button>
 
                                         )

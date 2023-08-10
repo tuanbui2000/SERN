@@ -123,7 +123,7 @@ class BookingModal extends Component {
             timeType: this.state.timeType,
             language: this.props.language,
             timeString: timeString,
-            doctorName:doctorName
+            doctorName: doctorName
         })
         if (res && res.errCode === 0) {
             toast.success("Booking a new appointment succeed!")
@@ -139,18 +139,18 @@ class BookingModal extends Component {
 
     buildTimeBooking = (dataTime) => {
         let { language } = this.props
-      
+
         if (dataTime && !_.isEmpty(dataTime)) {
 
             let time = language === LANGUAGES.VI ?
                 dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn
-            
-            
+
+
             let date = language === LANGUAGES.VI ?
                 moment.unix(+dataTime.date / 1000).format('dddd - DD/MM/YYYY')
                 : moment.unix(+dataTime.date / 1000).locale('en').format('ddd-MM/DD/YYYY')
 
-            return ( `${time} - ${date}` )
+            return (`${time} - ${date}`)
         }
         return <></>
 
@@ -159,15 +159,15 @@ class BookingModal extends Component {
 
     buildDoctorName = (dataTime) => {
         let { language } = this.props
-        
+
         if (dataTime && !_.isEmpty(dataTime)) {
             let name = language === LANGUAGES.VI ?
-              ` ${ dataTime.doctorData.lastName} ${dataTime.doctorData.firstName}`
-                : `${ dataTime.doctorData.firstName} ${dataTime.doctorData.lastName}`
+                ` ${dataTime.doctorData.lastName} ${dataTime.doctorData.firstName}`
+                : `${dataTime.doctorData.firstName} ${dataTime.doctorData.lastName}`
             return name
         }
         return ''
-}
+    }
     render() {
 
 
@@ -202,6 +202,8 @@ class BookingModal extends Component {
                                 doctorId={doctorId}
                                 isShowDescriptionDoctor={false}
                                 dataTime={dataTime}
+                                isShowLinkDetail={false}
+                                isShowPrice={true}
                             />
                         </div>
                         <div className='row'>
