@@ -53,6 +53,9 @@ class DetailDoctor extends Component {
             nameVi = `${detailDoctor.positionData.valueVi}, ${detailDoctor.lastName} ${detailDoctor.firstName}`;
             nameEn = `${detailDoctor.positionData.valueEn}, ${detailDoctor.firstName} ${detailDoctor.lastName}`;
         }
+
+        console.log("check state component: ", this.state.detailDoctor);
+
         return (
             <>
                 <HomeHeader isShowBanner={false} />
@@ -99,7 +102,8 @@ class DetailDoctor extends Component {
 
                     <div className='detail-info-doctor'>
                         {detailDoctor && detailDoctor.Markdown && detailDoctor.Markdown.contentHTML &&
-                            <div dangerouslySetInnerHTML={{ __html: detailDoctor.Markdown.contentHTML }} />
+                            <div dangerouslySetInnerHTML={{ __html: detailDoctor.Markdown.contentHTML }} >
+                            </div>
                         }
                     </div>
                     <div className='comment-doctor'>     </div>

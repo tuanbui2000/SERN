@@ -7,7 +7,7 @@ class HomeFooter extends Component {
 
         return (
             <div className='home-footer'>
-<p>&copy; 2023 buidinhtuan. More information <a target='_blank' href='https://www.facebook.com/profile.php?id=100027057561662'>Click here</a> </p>
+<p>&copy; 2023 buidinhtuan. More information <a target="_blank" href='https://www.facebook.com/profile.php?id=100027057561662'>Click here</a> </p>
             </div>
         );
     }

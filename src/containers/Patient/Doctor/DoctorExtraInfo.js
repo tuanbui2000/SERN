@@ -16,11 +16,15 @@ class DoctorExtraInfo extends Component {
         }
     }
     async componentDidMount() {
-
-        let { language } = this.props
-
-
-
+if( this.props.doctorIdfromparent){
+        let res = await getExtraInfoDoctorById(this.props.doctorIdfromparent);
+        // console.log("chjeckk", res.data);
+        if (res && res.errCode === 0) {
+            this.setState({
+                extraInfor: res.data
+            })
+        }
+    }
 
 
 

@@ -251,7 +251,6 @@ class UserRedux extends Component {
             // avatar
         } = this.state
 
-        // console.log("check state component: ", this.state);
         return (
             <div className='user-redux-container'>
 
