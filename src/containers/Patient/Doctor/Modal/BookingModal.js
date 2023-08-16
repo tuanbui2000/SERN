@@ -116,8 +116,8 @@ class BookingModal extends Component {
             email: this.state.email,
             address: this.state.address,
             reason: this.state.reason,
-            date: date,
-            genders: this.state.genders,
+            date: this.props.dataTime.date,
+            birthday: date,
             selectedGenders: this.state.selectedGenders.value,
             doctorId: this.state.doctorId,
             timeType: this.state.timeType,
@@ -251,7 +251,7 @@ class BookingModal extends Component {
                                 <Select
                                     value={this.state.selectedGenders}
                                     onChange={this.handleChangeSelect}
-                                    options={this.state.genders}
+                                    options={this.state.genders}   
                                 />
                             </div>
 
