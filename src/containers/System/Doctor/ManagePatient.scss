@@ -1,3 +1,10 @@
+div._loading_overlay_wrapper{
+    position: unset;
+    ._loading_overlay_overlay{
+        z-index: 999999;
+    }
+}
+
 .manage-patient-container {
     .m-p-title {
         font-size: 15px;
@@ -40,12 +47,6 @@
             color: white;
         }
 
-        .Remedy-btn {
-            height: 30px;
-            border-radius: 3px;
-            background: rgb(42, 134, 255);
-            color: white;
-
-        }
+     
     }
 }

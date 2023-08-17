@@ -1,9 +1,10 @@
 .detail-specialty-container {
-    border: 1px solid red;
     min-height: 100%;
     background: #eee;
+    padding: 0 15px;
 
-
+    // margin: 0 auto;
+    // max-width: 1192px;
 
     .specialty-descriptions {
         background-color: #fff !important;
@@ -85,8 +86,9 @@
     }
 
     .detail-specialty-body {
-        padding: 0 150px;
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
+        max-width: 1192px;
     }
 }

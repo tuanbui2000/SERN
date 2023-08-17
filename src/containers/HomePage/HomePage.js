@@ -7,38 +7,86 @@ import OutStandingDoctor from './Section/OutStandingDoctor';
 import HandBook from './Section/HandBook';
 import About from './Section/About';
 import HomeFooter from './HomeFooter';
-import './HomePage.scss'
+import './HomePage.scss';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
 
 class HomePage extends Component {
-// handleAfterChange= (event, )={
+    // handleAfterChange= (event, )={
 
-// }
+    constructor (props) {
+        super(props);
+        this.state = {
+            slidesToShow:this.calculateSlidesToShow(window.innerWidth)
+           
+        };
+    }
+
+
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleResize);
+    }
+    
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    }
+    
+    handleResize = () => {
+        const newWindowWidth = window.innerWidth;
+        const newSlidesToShow = this.calculateSlidesToShow(newWindowWidth);
+        
+        this.setState({
+            slidesToShow: newSlidesToShow
+        });
+    }
+    
+
+
+        calculateSlidesToShow(windowWidth) {
+        // Tính toán giá trị slidesToShow dựa trên kích thước cửa sổ
+        console.log(windowWidth);
+        if (windowWidth >= 1200) {
+            return 4;
+        } else if (windowWidth >= 847) {
+            return 3;
+        } else if (windowWidth >= 563) {
+            return 2;
+        } else {
+            return 1;
+            }
+    }
+
+
+
     render() {
         let settings = {
             dots: false,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 2,
+            infinite: true,
+            speed: 600,
+            slidesToShow: this.state.slidesToShow,
+            // slidesToShow: 3,
+            slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 3000
-
-
+            autoplaySpeed: 3000,
         }
+
         return (
             <div>
-                <HomeHeader  isShowBanner={true}/>
-                < Specialty settings={settings} />
-                < MedicaFacility settings={settings} />
-                < OutStandingDoctor settings={settings} />
+
+            
+                <HomeHeader isShowBanner={true} />
+                < Specialty settings={{ ...settings, autoplaySpeed: 6000 }} />
+                < MedicaFacility settings={{ ...settings, autoplaySpeed: 3000 }} />
+                < OutStandingDoctor settings={{ ...settings, autoplaySpeed: 5000 }} />
                 < HandBook settings={settings} />
                 <About />
-                <HomeFooter/>
+                <HomeFooter />
             </div>
         );
+
+
     }
 
 }

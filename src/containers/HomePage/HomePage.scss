@@ -133,6 +133,9 @@
              display       : flex;
              flex-direction: column;
 
+             max-width: 1192px;
+             margin-right: auto;
+             margin-left: auto;
              // height: inherit;
 
              .section-header {
@@ -181,6 +184,9 @@
 
      .section-about {
          padding: 0 100px;
+         max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
 
          .section-about-header {
              padding    : 20px 10px;

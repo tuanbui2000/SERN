@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import { history } from '../redux'
 import { ToastContainer } from 'react-toastify';
@@ -43,6 +43,7 @@ class App extends Component {
                     <div className="main-container">
                         <div className="content-container">
                             <CustomScrollbars style={{ height: '100vh', width: '100%' }}>
+                            <BrowserRouter>
                                 <Switch>
                                     <Route path={path.HOME} exact component={(Home)} />
                                     <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
@@ -53,7 +54,8 @@ class App extends Component {
                                     <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
                                     <Route path={path.VERIFY_BOOKING} component={VerifyEmail} />
                                     <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
-                                </Switch>
+                            </Switch>
+                            </BrowserRouter>
                             </CustomScrollbars>
                         </div>
 

@@ -63,14 +63,14 @@ const saveBulkScheduleDoctor = (data) => {
 }
 const getScheduleByDate = (doctorId, date) => {
     return axios.get(`/api/get-schedule-doctor-by-date?doctorId=${doctorId}&date=${date}`)
-    
+
 }
 const getExtraInfoDoctorById = (doctorId) => {
     return axios.get(`/api/get-extra-info-doctor-by-id?doctorId=${doctorId}`)
 }
 const getProfileDoctorById = (doctorId) => {
     return axios.get(`/api/get-profile-doctor-by-id?doctorId=${doctorId}`)
-   
+
 }
 
 const postPatientAppointment = (data) => {
@@ -107,6 +107,9 @@ const getDetailClinic = (data) => {
 const getAllPatients = (data) => {
     return axios.get(`/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`)
 }
+const postSendRemedy = (data) => {
+    return axios.post(`/api/send-remedy`, data)
+}
 
 export {
     handleLoginApi,
@@ -131,5 +134,6 @@ export {
     createNewClinic,
     getDetailClinic,
     getAllClinic,
-    getAllPatients
+    getAllPatients,
+    postSendRemedy
 }
