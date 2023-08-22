@@ -74,14 +74,14 @@ class DetailSpecialty extends Component {
 
 
     }
- 
 
-    handleOnchangeSelect =  async(event) => {
-        
+
+    handleOnchangeSelect = async (event) => {
+
         if (this.props.match && this.props.match.params && this.props.match.params.id) {
             let id = this.props.match.params.id;
             let location = event.target.value;
-        
+
 
 
             let res = await getDetailSpecialty({
@@ -89,7 +89,7 @@ class DetailSpecialty extends Component {
                 location: location
             });
 
-            if (res && res.errCode === 0 ) {
+            if (res && res.errCode === 0) {
                 let data = res.data;
                 let arrDoctor = []
 
@@ -104,7 +104,7 @@ class DetailSpecialty extends Component {
                 this.setState({
                     dataDetailSpecialty: res.data,
                     arrDoctor: arrDoctor,
-                    
+
                 })
             }
 
@@ -140,9 +140,9 @@ class DetailSpecialty extends Component {
                     <div className='search_doctor-sp'>
                         <select onChange={(event) => this.handleOnchangeSelect(event)} >
                             <option value="ALL"> {language === LANGUAGES.VI ? "Toàn quốc" : "ALL"}
-</option>
+                            </option>
                             {listProvince && listProvince.length > 0 && listProvince.map((item, index) => {
-                               
+
                                 return (
 
                                     <option key={index} value={item.keyMap}>

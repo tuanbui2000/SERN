@@ -54,7 +54,7 @@ class ProfileDoctor extends Component {
     }
 
     renderTimeBooking = (dataTime) => {
-        console.log(dataTime);
+        // console.log(dataTime);
         let { language } = this.props
         let time = language === LANGUAGES.VI ?
             dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn
@@ -75,7 +75,7 @@ class ProfileDoctor extends Component {
     }
 
     render() {
-        console.log(this.state.dataProfile);
+        // console.log(this.state.dataProfile);
         let { dataProfile } = this.state
         let { language, isShowDescriptionDoctor, dataTime, isShowPrice, isShowLinkDetail, doctorId } = this.props
         let nameVi = '';

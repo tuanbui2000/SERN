@@ -26,12 +26,23 @@ class OutStandingDoctor extends Component {
 
     }
 
- 
+
     componentDidMount() {
         this.props.loadTopDoctors();
     }
 
 
+    handleViewListDoctor = () => {
+        // console.log("check doctor detail: ", doctor);
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+          }
+
+        if (this.props.history) {
+            this.props.history.push(`/list/outstandingdoctor`)
+        }
+
+    }
     handleViewDetailDoctor = (doctor) => {
         // console.log("check doctor detail: ", doctor);
         if (this.props.history) {
@@ -53,7 +64,7 @@ class OutStandingDoctor extends Component {
                 <div className='section-container'>
                     <div className='section-header'>
                         <span className='title-section'><FormattedMessage id="homepage.outstanding-doctor" /></span>
-                        <button className='btn-section'><FormattedMessage id="homepage.more-infor" /></button>
+                        <button onClick={() => this.handleViewListDoctor()} className='btn-section'><FormattedMessage id="homepage.more-infor" /></button>
                     </div>
                     <div className='section-body'>
                         <Slider {...this.props.settings} >
@@ -94,7 +105,9 @@ class OutStandingDoctor extends Component {
 
 
                                 )
-                            })}
+                            }
+                            )
+                            }
 
 
                         </Slider>

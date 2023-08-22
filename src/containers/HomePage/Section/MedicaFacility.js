@@ -4,6 +4,7 @@ import './MedicaFacility.scss'
 import Slider from "react-slick";
 import { withRouter } from 'react-router';
 import { getAllClinic } from '../../../services/userService';
+import { FormattedMessage } from 'react-intl';
 
 
 class MedicaFacility extends Component {
@@ -26,6 +27,12 @@ class MedicaFacility extends Component {
 
     }
 
+    handleViewListClinic = () => {
+        if (this.props.history) {
+            this.props.history.push(`/list/clinic`)
+        }
+    }
+
     handleViewDetailClinic = (item) => {
         if (this.props.history) {
             this.props.history.push(`/detail-clinic/${item.id}`)
@@ -38,8 +45,8 @@ class MedicaFacility extends Component {
             <div className='section-share section-medical-facility'>
                 <div className='section-container'>
                     <div className='section-header'>
-                        <span className='title-section'>Cơ sở y tế nổi bật</span>
-                        <button className='btn-section'>Xem thêm</button>
+                        <span className='title-section'><FormattedMessage id="homepage.medical-facilities" /></span>
+                        <button onClick={() => this.handleViewListClinic()} className='btn-section'><FormattedMessage id="homepage.more-infor" /></button>
                     </div>
                     <div className='section-body'>
                         <Slider {...this.props.settings} >

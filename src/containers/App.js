@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import { history } from '../redux'
 import { ToastContainer } from 'react-toastify';
@@ -16,6 +16,9 @@ import Doctor from '../routes/Doctor';
 import VerifyEmail from './Patient/VerifyEmail';
 import DetailSpecialty from './Patient/Specialty/DetailSpecialty';
 import DetailClinic from './Patient/Clinic/DetailClinic';
+import ListSection from './HomePage/Section/ListSection';
+import DetailHandbook from './Patient/HandBook/DetailHandbook';
+
 class App extends Component {
 
     handlePersistorState = () => {
@@ -43,7 +46,7 @@ class App extends Component {
                     <div className="main-container">
                         <div className="content-container">
                             <CustomScrollbars style={{ height: '100vh', width: '100%' }}>
-                            <BrowserRouter>
+                            {/* <BrowserRouter> */}
                                 <Switch>
                                     <Route path={path.HOME} exact component={(Home)} />
                                     <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
@@ -54,8 +57,11 @@ class App extends Component {
                                     <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
                                     <Route path={path.VERIFY_BOOKING} component={VerifyEmail} />
                                     <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
+                                    <Route path={path.DETAIL_HANDBOOK} component={DetailHandbook} />
+
+                                    <Route path={path.LIST_SECTION} component={ListSection} />
                             </Switch>
-                            </BrowserRouter>
+                            {/* </BrowserRouter> */}
                             </CustomScrollbars>
                         </div>
 
@@ -83,6 +89,13 @@ class App extends Component {
                     </div>
                 </Router>
             </Fragment>
+
+
+            
+            
+            
+            
+            
         )
     }
 }

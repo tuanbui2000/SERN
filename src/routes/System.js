@@ -7,6 +7,7 @@ import Header from '../containers/Header/Header';
 import ManageDoctor from '../containers/System/Admin/ManageDoctor';
 import ManageSpecialty from '../containers/Patient/Specialty/ManageSpecialty';
 import ManageClinic from '../containers/System/Clinic/ManageClinic';
+import ManageHandbook from '../containers/System/HandBook/ManageHandbook';
 
 class System extends Component {
     render() {
@@ -18,15 +19,17 @@ class System extends Component {
                 {isLoggedIn && <Header />}
                 <div className="system-container">
                     <div className="system-list">
-                    <BrowserRouter> <Switch>
+                        {/* <BrowserRouter> */}
+                            <Switch>
                             <Route path="/system/user-manage" component={UserManage} />
                             <Route path="/system/user-redux" component={UserRedux} />
                             <Route path="/system/manage-doctor" component={ManageDoctor} />
                             <Route path="/system/manage-specialty" component={ManageSpecialty} />
                             <Route path="/system/manage-clinic" component={ManageClinic} />
+                            <Route path="/system/manage-handbook" component={ManageHandbook} />
                             <Route component={() => { return (<Redirect to={systemMenuPath} />) }} />
                         </Switch>
-                        </BrowserRouter>
+                        {/* </BrowserRouter> */}
                     </div>
                 </div>
             </>

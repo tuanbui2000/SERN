@@ -31,11 +31,11 @@ class ModalUser extends Component {
                 address: '',
     
             })
-            console.log('listen emiiter form parent');
+            // console.log('listen emiiter form parent');
         })
     }
     componentDidMount() {
-        console.log('mouting modal');
+        // console.log('mouting modal');
     }
 
     toggle = () => {

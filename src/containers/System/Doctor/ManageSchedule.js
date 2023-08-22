@@ -143,7 +143,7 @@ class ManageSchedule extends Component {
                 return
             }
 
-            console.log(result);
+            // console.log(result);
 
         }
 

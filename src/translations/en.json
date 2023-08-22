@@ -3,7 +3,7 @@
         "specialty": "Medical specialty",
         "searchdoctor": "Find a doctor by specialty",
         "health-facility": "Health facility",
-        "select-room": " Chọn bệnh viện phòng khám",
+        "select-room": " Choose a hospital hospital",
         "doctor": " Doctor",
         "select-doctor": "Choose a good doctor",
         "fee": "Checkup package",
@@ -59,7 +59,8 @@
     "homepage": {
         "outstanding-doctor": "Outstanding doctors",
         "more-infor": "See more",
-        "popular-specialties":"Popular specialties"
+        "popular-specialties": "Popular specialties",
+        "medical-facilities":"Cơ sở y tế nổi bật"
     },
     "manage-schedule": {
         "title": "Manage doctor's examination plan",
@@ -74,45 +75,43 @@
             "book": "Choose ",
             "free": " and book ( for Free )"
         },
-        "extra-info-doctor":{
-            "text-address":"Medical examination address",
-            "price":"Medical examination fee: ",
+        "extra-info-doctor": {
+            "text-address": "Medical examination address",
+            "price": "Medical examination fee: ",
             "detail": "See detail",
-            "payment":"Patients can pay for expenses in the form of: ",
+            "payment": "Patients can pay for expenses in the form of: ",
             "hide-price": "Hidden price list"
         },
-        "booking-modal":{
+        "booking-modal": {
             "title": "Medical appointment scheduling information",
-            "fullName":"Full name",
-            "phoneNumber":" Phonenumber",
-            "email":"Email",
-            "address":"Address",
+            "fullName": "Full name",
+            "phoneNumber": " Phonenumber",
+            "email": "Email",
+            "address": "Address",
             "reason": "Reason",
             "birthday": "Date of birth",
             "gender": "Gender",
-            "btn-confirm":"Confirm",
-            "btn-cancel":"Cancel",
-            "priceBooking":"Free booking",
-            "price":"Price: "
+            "btn-confirm": "Confirm",
+            "btn-cancel": "Cancel",
+            "priceBooking": "Free booking",
+            "price": "Price: "
         }
     },
-    "admin":{
-        "manage-doctor":{
-            "title": "Add doctor's info"
-            ,    "introduction-info":"Introduction info",
-            "choose-doctor":"Choose a doctor",
-            "save-info":"Save",
+    "admin": {
+        "manage-doctor": {
+            "title": "Add doctor's info",
+            "introduction-info": "Introduction info",
+            "choose-doctor": "Choose a doctor",
+            "save-info": "Save",
             "create-info": "Create",
-            "price":"price", 
+            "price": "price",
             "Payment": "Payment",
             "province": "province",
-            "nameClinic":"Clinic's name",
-            "addressClinic":" Clinic's address",
-            "note":"note",
-            "choose-specialty":"Choose specialty",
-            "select-clinic":"select clinic"
-           
-
+            "nameClinic": "Clinic's name",
+            "addressClinic": " Clinic's address",
+            "note": "note",
+            "choose-specialty": "Choose specialty",
+            "select-clinic": "select clinic"
         }
     }
 }

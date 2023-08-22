@@ -249,7 +249,7 @@ class ManageDoctor extends Component {
 
                 // console.log('tun check new onchange', res.data.Doctor_infor);
                 // console.log('tun check list', listProvince);
-                console.log('tun check selected', selectedProvince);
+                // console.log('tun check selected', selectedProvince);
 
             }
 

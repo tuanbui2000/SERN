@@ -54,7 +54,7 @@ class DetailDoctor extends Component {
             nameEn = `${detailDoctor.positionData.valueEn}, ${detailDoctor.firstName} ${detailDoctor.lastName}`;
         }
 
-        console.log("check state component: ", this.state.detailDoctor);
+        // console.log("check state component: ", this.state.detailDoctor);
 
         return (
             <>

@@ -107,6 +107,23 @@ const getDetailClinic = (data) => {
 const getAllPatients = (data) => {
     return axios.get(`/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`)
 }
+
+
+
+
+const createNewHandbook = (data) => {
+    return axios.post(`/api/create-new-handbook`, data)
+}
+
+const getAllHandbook = () => {
+    return axios.get(`/api/get-all-handbook`)
+}
+const getDetailHandbook = (id) => {
+    return axios.get(`/api/get-detail-handbook?id=${id}`)
+}
+
+
+
 const postSendRemedy = (data) => {
     return axios.post(`/api/send-remedy`, data)
 }
@@ -135,5 +152,8 @@ export {
     getDetailClinic,
     getAllClinic,
     getAllPatients,
-    postSendRemedy
+    postSendRemedy,
+    createNewHandbook,
+    getAllHandbook,
+    getDetailHandbook
 }
